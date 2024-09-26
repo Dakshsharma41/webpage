@@ -2,10 +2,10 @@
   <div class="col-12 text-center">
     <div class="btn-group">
       <button type="button" (click)="changeTab('Roles')" class="btn"
-      [ngClass]="{'btn-sucess': currentComponent == 'Roles',  'btn-primary': currentComponent !== 'Roles'}">Roles</button>
+      [ngClass]="{'btn-sucess': currentComponent == 'Roles',  'btn-primary': currentComponent == 'Roles'}">Roles</button>
       
       <button type="button" (click)="changeTab('Designation')" class="btn"
-      [ngClass]="currentComponent == 'Designation' ? 'btn-sucess':'btn-primary'">Designation</button>
+      [ngClass]="{'btn-sucess': currentComponent == 'Designation', 'btn-primary': currentComponent =='Designation'}">Designation</button>
     </div>
   </div>
 </div>
