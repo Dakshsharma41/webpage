@@ -54,7 +54,16 @@
                 <div class="row">
                     <div class="col-6">
                         <label for="">Person Name</label>
-                        <input type="text"[(ngModel)]="clientObj.contactPersonName"  class="form-control">
+                        <input type="text"#personName="ngModel" required [(ngModel)]="clientObj.contactPersonName"  class="form-control">
+                        @if(personName.touched){
+                            <div class="text-danger">
+                                @if(personName?.errors?.['required']){
+                                    <span>This Is Required</span>
+                        }
+                    </div>
+                            }
+                            
+                        
                     </div>
                     <div class="col-6">
                         <label for="">Company Name</label>
@@ -98,7 +107,10 @@
                         <button class="btn btn-secondary">Reset</button>
                     </div>
                     <div class="col-6 text-center">
-                        <button class="btn btn-success"(click)="onSaveClient()"> Save Client</button>
+                        <button class="btn btn-success"(click)="onSaveClient()"> 
+                            {{clientObj.clientId !=0 ? 'Update Client':'Save Client'}}
+                            
+                            t</button>
                     </div>
                 </div>
             </div>
